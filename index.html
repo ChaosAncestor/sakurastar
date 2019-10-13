@@ -1,56 +1,309 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8" />
-		<!-- 手机端自适应 -->
-		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<meta charset="utf-8">
 		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 		<style type="text/css">
-			.box{
-				width: 1200px;
-				margin: 0px auto;
-			}
-			.bg-nav{
-				background-color: pink !important;
-				border-radius: 20px;
+			ul{
+				margin: 0;
+				padding: 0;
+				list-style: none;
 				
 			}
-			.nav-color{
-				color: white !important;
+
+			.box {
+				margin-top: 56px;
 			}
+
+			.list-tag {
+				top: 56px;
+				bottom: 0px;
+				background-color: #f5f5f5;
+				padding: 0px;
+			}
+			.list-tag ul{
+			}
+			.list-tag ul li{
+				cursor: pointer;
+				text-indent: 2em;
+			}
+			.pro-active{
+				color: red !important;
+				background-color: antiquewhite;
+			}
+			.table-show td{
+				vertical-align: middle;
+			}
+			.table-show .pro-img{
+				width: 60px;
+				margin: 0px auto;
+			}
+			.table-show .pro-title{
+				/* 溢出不换行 */
+				white-space: nowrap; 
+				/* 溢出截断 */
+				overflow: hidden;
+				/* 截断后以省略号形式 */
+				text-overflow: ellipsis;
+				/* 最大宽度 */
+				max-width: 500px;
+			}
+			.message{
+				text-align: center;
+			}
+			.tianjia{
+				text-align: center;
+				cursor: pointer;
+				}
+				
+			/* .table-show .pro- */
 		</style>
 	</head>
 	<body>
+		<!-- 导航条 -->
+		<nav class=" navbar-expand-lg navbar navbar-dark bg-dark fixed-top">
+			<a class="navbar-brand" href="#">项目名称</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#c">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="c">
+				<form class="form-inline my-2 my-lg-0 ml-auto d-none d-lg-block">
+					<input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
+				</form>
+
+				<ul class="navbar-nav mr-2">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">首页 <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">服务</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">商品列表</a>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-lg-0 d-lg-none">
+					<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+				</form>
+			</div>
+		</nav>
+		<!-- 内容 -->
 		<div class="box">
-			<nav class="navbar navbar-expand-lg  bg-nav">
-				<a class="navbar-brand " href="javascript:;">宫脇咲良个人站</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-				 aria-controls="navbarSupportedContent" aria-expanded="false" >
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav mr-auto">
-						<li class="nav-item">
-							<a class="nav-link nav-color" href="javascript:;">动态</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link nav-color" href="javascript:;">视频</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link nav-color" href="javascript:;">照片</a>
-						</li>
-					</ul>
-					<form class="form-inline my-2 my-lg-0">
-						<input class="form-control mr-sm-2" type="search" placeholder="小亮之神" aria-label="Search">
-						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
-					</form>
+			<div class="container-fluid">
+				<div class="row">
+					<!-- 左边表单 -->
+					<div class=" col-lg-2 fixed-top d-none d-lg-block list-tag ">
+						<div class="accordion" id="accordionExample">
+							<div class="message">
+								<p>欢迎登录</p>
+								<p><span>用户：</span><a id="user">ss</a></p>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingOne">
+
+									<div data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+										添加商品
+									</div>
+								</div>
+
+								<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+									<div class="tianjia">添加商品类型</div>
+									<ul class="add">
+										
+									</ul>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingTwo">
+
+									<div data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+										商品记录
+									</div>
+								</div>
+
+								<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+									<ul class="showdata">
+
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 右边内容 -->
+					<div class="col-lg-10 col-sm-12 offset-lg-2">
+						<div class="t table-show">
+							<h3 class="my-4 pt-title">居家商品</h3>
+							<table class="table table-striped table-hover table-bordered">
+								<thead class="thead-dark">
+									<tr>
+										<th scope="col">id</th>
+										<th scope="col">商品图片</th>
+										<th scope="col">商品名称</th>
+										<th scope="col">商品价格</th>
+										<th scope="col">操作</th>
+									</tr>
+								</thead>
+								<tbody class="tbody">
+
+								</tbody>
+							</table>
+							<nav aria-label="Page navigation example">
+								<ul class="pagination justify-content-center">
+									<li class="page-item">
+										<a class="page-link" href="#" aria-label="Previous">
+											<span aria-hidden="true">&laquo;</span>
+										</a>
+									</li>
+									<li class="page-item"><a class="page-link" href="#">1</a></li>
+									<li class="page-item"><a class="page-link" href="#">2</a></li>
+									<li class="page-item"><a class="page-link" href="#">3</a></li>
+									<li class="page-item">
+										<a class="page-link" href="#" aria-label="Next">
+											<span aria-hidden="true">&raquo;</span>
+										</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
 				</div>
-			</nav>
+			</div>
 		</div>
 
+		<!-- 模态框 -->
+		<!-- 添加商品 -->
+		<div class="modal fade" id="add-md" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">添加商品</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<!-- s -->
+					<form>
+						<label for="pros-type" class="type">商品类型</label>
+						<div class="input-group mb-3">
+							<input type="text" class="form-control add-type" id="pros-type" data-type="" value="" disabled="disabled">
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">商品名称</span>
+							</div>
+							<input id="pros-name" type="text" class="form-control pro-void">
+						</div>
 
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">商品价格</span>
+							</div>
+							<input id="pros-price" type="text" class="form-control  pro-void  pro-void">
+						</div>
+
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">商品图片</span>
+							</div>
+							<input id="pros-url" type="text" class="form-control  pro-void">
+						</div>
+					</form>
+					<!-- s -->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+						<button id="save" type="button" class="btn btn-primary">保存</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 修改商品 -->
+		<div class="modal fade" id="edit-md" data-id="" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">编辑商品</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<!-- s -->
+					<form>
+						<label for="edit-type" class="type">商品类型</label>
+						<div class="input-group mb-3">
+							<input id="edit-type" data-type="" type="text" class="form-control" value="" disabled="disabled">
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">商品名称</span>
+							</div>
+							<input data-edit="title" type="text" class="form-control edit-void">
+						</div>
+		
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">商品价格</span>
+							</div>
+							<input data-edit="price" type="text" class="form-control edit-void">
+						</div>
+		
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">商品图片</span>
+							</div>
+							<input  data-edit="img" type="text" class="form-control edit-void">
+						</div>
+					</form>
+					<!-- s -->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+						<button id="edit-save" type="button" class="btn btn-primary">保存</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 添加商品类型 -->
+		<div class="modal fade" id="type-md" data-id="" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">编辑商品</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<!-- s -->
+					<form>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">商品类型拼音</span>
+							</div>
+							<input type="text" class="form-control type-pj">
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">商品类型</span>
+							</div>
+							<input type="text" class="form-control type-type">
+						</div>
+						
+		
+					</form>
+					<!-- s -->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+						<button id="type-save" type="button" class="btn btn-primary">保存</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
 		<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/popper.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/products.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
 	</body>
 </html>

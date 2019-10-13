@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+		<style type="text/css">
+
+			.loginbg {
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+				background: url(img/loginbg.jpg) no-repeat 0px center;
+				background-size: cover;
+				filter:blur(0.1px);
+				/* opacity: 0.7; */
+			}
+
+			.logos {
+				width: 300px;
+				height: 50%;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				margin: auto;
+				border: aquamarine 1px solid;
+				background-color: rgba(46, 49, 49, 0.2);
+			}
+
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+
+			.title {
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				font-size: 22px;
+				font-weight: bold;
+				background-color: rgba(0, 181, 204, 1);
+			}
+
+			.forms {
+				padding: 0px 10px;
+			}
+
+			.forms>ul>li {
+				margin: 20px 0px;
+			}
+
+			.forms>ul>li>span {
+				display: inline-block;
+				text-align: center;
+				width: 30%;
+			}
+
+			.forms>.btn1 {
+				display: block;
+				width: 80%;
+				margin: 0px auto;
+				border: 0px solid #000;
+				background-color: #7FFFD4;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="loginbg">
+			<div class="logos">
+				<p class="title">用户注册</p>
+				<form class="forms" action="login.html" method="get">
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text fa fa-user">用户名:</span>
+								</div>
+								<input type="text" class="form-control " id="username" placeholder="输入用户名"  required>
+								<div class="invalid-feedback">
+									字母开头3-8位字符
+								</div>
+							</div>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text fa fa-key">密码:</span>
+								</div>
+								<input type="password" class="form-control" id="pwd" placeholder="输入密码"  required>
+								<div class="invalid-feedback">
+									6-16位字符
+								</div>
+							</div>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text fa fa-check-square-o">确认密码:</span>
+								</div>
+								<input type="password" class="form-control " id="repwd" placeholder="输入密码" required>
+								<div class="invalid-feedback">
+									两次密码不一样
+								</div>
+							</div>
+
+					<input class="btn1" type="submit" value="注册"disabled="disabled" />
+					<a class="float-right enrollment " href="login.html">去登录</a>
+				</form>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript" src="js/popper.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/products.js"></script>
+		<script type="text/javascript" src="js/validform.js"></script>
+		<script type="text/javascript" src="js/register.js"></script>
+	</body>
+</html>
